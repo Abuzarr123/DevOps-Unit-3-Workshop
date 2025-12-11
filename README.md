@@ -108,7 +108,7 @@ Once you've got the basic app working, you can expand it in a number of ways. Fo
 You can do that using `sys.argv`.
 Here's an example of an application that accepts command line parameters, and outputs them back to the screen:
 
-```
+```python
 import sys
 
 def main():
@@ -141,7 +141,7 @@ You can run the application by:
 2. Installing the necessary libraries by running `pip install -r requirements.txt`
 3. Running the application by running `python app.py`
 
-> If using ACG, you will need to install pip with `sudo apt install python3-pip`
+> If using Pluralsight, you will need to install pip with `sudo apt install python3-pip`
 
 You should see output that looks like this:
 
@@ -149,13 +149,13 @@ You should see output that looks like this:
 
 You should also be able to access the website by navigating to `http://localhost:5000` in your browser.
 
-> If you're using ACG there are a couple of extra steps to access that - open the spoiler section below to work through those!
+> If you're using Pluralsight there are a couple of extra steps to access that - open the spoiler section below to work through those!
 
-<details> <summary> Running the Flask app on ACloudGuru </summary>
+<details> <summary> Running the Flask app on Pluralsight </summary>
 
-If you're running the app on ACG, then we need to expose it to the internet so that you can connect from your machine. This involves two main steps:
+If you're running the app on Pluralsight, then we need to expose it to the internet so that you can connect from your machine. This involves two main steps:
 
-1. Open a port in the firewall (we'll use `8000`) so that ACG doesn't block the site:
+1. Open a port in the firewall (we'll use `8000`) so that Pluralsight doesn't block the site:
 ```
 sudo ufw allow 8000
 ```
