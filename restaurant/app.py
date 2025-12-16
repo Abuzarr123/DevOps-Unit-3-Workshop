@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-from datetime import datetime
+from datetime import datetime, timedelta
 
 app = Flask(__name__)
 
@@ -17,8 +17,15 @@ def get_bookings():
 def book():
     data = request.json
     booking_date = datetime.strptime(data['date'], '%Y-%m-%d')
+    today = datetime.now()
+    minimum_booking_date = today + timedelta(days=7)
+
+    if booking_date < minimum_booking_date:
+        return jsonify({"error": "Bookings can not occur within 7 days"}), 400
+    
     bookings.append(booking_date)
     return jsonify({"message": "Booking successful!"}), 200
+    
 
 if __name__ == '__main__':
     app.run(debug=True)
